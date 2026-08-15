@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChimieBlog - Învață chimie ușor</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">⚗️ ChimieBlog</a>
+      <nav class="main-nav">
+        <a href="index.html">Acasă</a>
+        <a href="despre.html">Despre</a>
+        <a href="archive.html">Arhivă</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Comută tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Chimie pentru clasele 7-12</h1>
+      <p>Teorie, experimente și teste explicate pe înțelesul tău.</p>
+      <div class="search-box">
+        <input type="search" id="search-input" placeholder="Caută în titluri și tag-uri...">
+      </div>
+      <div id="filter-buttons" class="filter-buttons">
+        <!-- generat din JS -->
+      </div>
+    </section>
+
+    <section id="posts-container" class="posts-grid">
+      <!-- carduri generate din JS -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 ChimieBlog. Proiect educațional.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/posts-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
