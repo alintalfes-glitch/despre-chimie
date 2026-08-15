@@ -1,0 +1,427 @@
+/* ===== Variabile și teme ===== */
+:root {
+  --bg: #f9f7fc;
+  --text: #1e1e2f;
+  --card-bg: #ffffff;
+  --primary: #6c5ce7;
+  --primary-light: #a29bfe;
+  --accent: #fd79a8;
+  --border: #e0dce8;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  --def-bg: #e8f0fe;
+  --ex-bg: #e6f4ea;
+  --recap-bg: #fff4e5;
+  --warning-bg: #ffe0e0;
+  --warning-border: #e74c3c;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a2e;
+  --text: #f0f0f5;
+  --card-bg: #2d2d44;
+  --primary: #a29bfe;
+  --primary-light: #c4bfff;
+  --accent: #f8a5c2;
+  --border: #44445a;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  --def-bg: #1e2a3a;
+  --ex-bg: #1e3a2a;
+  --recap-bg: #3a2e1e;
+  --warning-bg: #3a1e1e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--primary);
+}
+
+.theme-toggle {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--primary-light);
+}
+
+.search-box {
+  margin: 2rem auto 1rem;
+  max-width: 500px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  background: var(--card-bg);
+  color: var(--text);
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+}
+
+/* ===== Filtre ===== */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* ===== Grid postări ===== */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-cover {
+  height: 160px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+.card-cover.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-light);
+  font-size: 3rem;
+  color: white;
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+.card-category {
+  display: inline-block;
+  background: var(--primary-light);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  color: var(--text);
+}
+
+.card-date {
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-excerpt {
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.card-tags {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background: var(--def-bg);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* ===== Postare individuală ===== */
+.post-full {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+}
+
+.post-header {
+  margin-bottom: 1.5rem;
+}
+
+.post-header h1 {
+  font-size: 2.2rem;
+  margin: 0.5rem 0;
+}
+
+.post-date {
+  color: var(--primary);
+  margin: 0.5rem 0;
+}
+
+.post-tags {
+  margin: 0.5rem 0 1rem;
+}
+
+.post-cover {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.post-body {
+  line-height: 1.8;
+}
+
+.post-body h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0.5rem 0 1rem 2rem;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-light);
+}
+
+.share-btn {
+  display: block;
+  margin: 0 auto 3rem;
+}
+
+/* ===== Casete speciale ===== */
+.definitie,
+.exemplu,
+.avertisment,
+.recapitulare {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  border-left: 6px solid;
+}
+
+.definitie {
+  background: var(--def-bg);
+  border-color: #3498db;
+}
+
+.exemplu {
+  background: var(--ex-bg);
+  border-color: #2ecc71;
+}
+
+.avertisment {
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+}
+
+.recapitulare {
+  background: var(--recap-bg);
+  border-color: #f39c12;
+}
+
+.warnings-container {
+  margin-bottom: 1rem;
+}
+
+/* ===== Arhivă ===== */
+#archive-title {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+/* ===== Despre ===== */
+.about {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-full {
+    padding: 1rem;
+  }
+
+  .post-navigation {
+    flex-direction: column;
+  }
+}
